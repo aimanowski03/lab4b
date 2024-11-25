@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Details</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            // Book collection JSON
+            var bookCollection = {
+                "books": [
+                    {
+                        "title": "The Great Gatsby",
+                        "author": "F. Scott Fitzgerald", 
+                        "publicationYear": 1925,
+                        "genres": ["Fiction", "Classics"]
+                    },
+                    {
+                        "title": "To Kill a Mockingbird", 
+                        "author": "Harper Lee",
+                        "publicationYear": 1960,
+                        "genres": ["Fiction", "Coming-of-Age"]
+                    }
+                ]
+            };
+
+            // a. Title of the first book
+            console.log("First Book Title:", bookCollection.books[0].title);
+
+            // b. Author of the second book
+            console.log("Second Book Author:", bookCollection.books[1].author);
+
+            // c. Genres of all books
+            var allGenres = bookCollection.books.map(function(book) {
+                return book.genres;
+            }).flat();
+            console.log("All Genres:", allGenres);
+        });
+    </script>
+</body>
+</html>
